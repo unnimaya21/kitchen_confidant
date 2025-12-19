@@ -6,8 +6,8 @@ final dioProvider = Provider<Dio>((ref) {
   return Dio(
       BaseOptions(
         baseUrl: baseUrl, // Use 10.0.2.2 for Android Emulator to hit localhost
-        connectTimeout: const Duration(seconds: 10),
-        receiveTimeout: const Duration(seconds: 10),
+        // connectTimeout: const Duration(seconds: 20),
+        // receiveTimeout: const Duration(seconds: 20),
         headers: {'Content-Type': 'application/json'},
       ),
     )

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kitchen_confidant/presentation/pages/homepage.dart';
+import 'package:kitchen_confidant/core/routes/on_generate_route.dart';
+import 'package:kitchen_confidant/kitchen_confidant.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
@@ -11,16 +12,18 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       navigatorKey: navigatorKey,
       title: 'Kitchen Confidant',
+      onGenerateRoute: RouteGenerator.onGenerate,
+
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: ExploreScreen(),
+      home: KitchenConfidant(),
     );
   }
 }

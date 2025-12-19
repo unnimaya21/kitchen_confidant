@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:kitchen_confidant/presentation/pages/virtual_pantry.dart';
+import 'package:kitchen_confidant/presentation/pantry/virtual_pantry.dart';
 import 'package:kitchen_confidant/presentation/widgets/feature_card.dart';
 import 'package:kitchen_confidant/presentation/widgets/glass_card.dart';
 
@@ -12,6 +12,7 @@ class ExploreScreen extends StatefulWidget {
 }
 
 class _ExploreScreenState extends State<ExploreScreen> {
+  // ignore: unused_field
   int _currentIndex = 1;
   @override
   Widget build(BuildContext context) {
@@ -103,29 +104,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
             ),
           ],
         ),
-      ),
-
-      /// Bottom Navigation Bar
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() => _currentIndex = index);
-        },
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.redAccent,
-        unselectedItemColor: Colors.black38,
-        showUnselectedLabels: true,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.restaurant_menu),
-            label: "Recipes",
-          ),
-          BottomNavigationBarItem(icon: Icon(Icons.explore), label: "Explore"),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: "Settings",
-          ),
-        ],
       ),
     );
   }

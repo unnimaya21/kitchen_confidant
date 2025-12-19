@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kitchen_confidant/di/di.dart';
-import 'package:kitchen_confidant/presentation/pages/pantry_scanner.dart';
+import 'package:kitchen_confidant/presentation/pantry/pantry_scanner.dart';
 import 'package:kitchen_confidant/presentation/providers/pantry_provider.dart';
 
 final pantryScannerProvider = Provider<PantryScanner>((ref) {
@@ -22,7 +22,7 @@ class PantryPage extends ConsumerWidget {
           itemBuilder: (context, i) => ListTile(title: Text(items[i].name)),
         ),
         loading: () => CircularProgressIndicator(),
-        error: (e, st) => Text('Error: $e'),
+        error: (e, st) => Text('Something went wrong'),
       ),
     );
   }

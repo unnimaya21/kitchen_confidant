@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kitchen_confidant/di/di.dart';
 import 'package:kitchen_confidant/domain/repositories/pantry_repository.dart';
-import 'package:kitchen_confidant/presentation/pages/pantry_scanner.dart';
+import 'package:kitchen_confidant/presentation/pantry/pantry_scanner.dart';
 import 'package:kitchen_confidant/presentation/providers/pantry_provider.dart';
 
 class PantryScreen extends ConsumerWidget {
@@ -36,7 +36,7 @@ class PantryScreen extends ConsumerWidget {
           },
         ),
         loading: () => Center(child: CircularProgressIndicator()),
-        error: (err, stack) => Center(child: Text("Error: $err")),
+        error: (err, stack) => Center(child: Text("Something went wrong!")),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showScanner(context, pantryRepository),
